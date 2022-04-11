@@ -6,7 +6,7 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "start": "open http://localhost:8888 && PORT=8888 serve -s dist",
+        "start": "open http://localhost:8080 && PORT=8080 serve -s dist",
         "push_PROD": "sh deploy.sh prod"
     },
     "dependencies": {
