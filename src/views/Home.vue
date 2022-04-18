@@ -65,6 +65,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/main.scss";
+
 .section-one {
   width: 100%;
   height: calc( 100vh - 70px );
@@ -75,12 +77,13 @@ export default {
   position: relative;
   h2 {
     font-size: 2.1rem;
-    font-weight: 500;
+    letter-spacing: 2px;
+    font-weight: 400;
   }
   span {
     text-transform: uppercase;
     font-size: .8rem;
-    padding-left: 8rem;
+    padding-left: 6rem;
     &::before {
       content: '';
       display: inline-block;
@@ -92,10 +95,6 @@ export default {
     }
   }
 }
-.detail-block {
-  // display: flex;
-  // justify-content: space-between;
-}
 @media screen and (min-width: 992px) {
   .container {
     max-width: 100%;
@@ -105,7 +104,7 @@ export default {
   display: inline-block;
   width: 110px;
   height: 50px;
-  background-color: #E0A96F;
+  background-color: $brand-gold;
   position: absolute;
   right: 0;
   top: 10px;

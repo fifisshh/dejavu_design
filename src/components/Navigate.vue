@@ -17,15 +17,18 @@
             </ul>
         </div>
         <div class="social-media">
-            <div class="icon ig">
-                <img src="../assets/icon_ig.png" alt="Instagram">
-            </div>
-            <div class="icon yt">
-                <img src="../assets/icon_yt.png" alt="YouTube">
-            </div>
-            <div class="icon fb">
-                <img src="../assets/icon_fb.png" alt="Facebook">
-            </div>
+            <a class="icon ig">
+                <!-- <img src="../assets/icon_ig.png" alt="Instagram"> -->
+                <font-awesome-icon icon="fa-brands fa-instagram" />
+            </a>
+            <a class="icon yt">
+                <!-- <img src="../assets/icon_yt.png" alt="YouTube"> -->
+                <font-awesome-icon icon="fa-brands fa-youtube" />
+            </a>
+            <a class="icon fb">
+                <!-- <img src="../assets/icon_fb.png" alt="Facebook"> -->
+                <font-awesome-icon icon="fa-brands fa-facebook-f" />
+            </a>
         </div>
     </div>
 </template>
@@ -37,6 +40,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/main.scss";
+
 .navbar {
     // background: rgb(184, 171, 158);
     border-bottom: 1px solid #ddd;
@@ -52,7 +57,7 @@ export default {
             width: 90px;
             height: 100px;
             top: 0;
-            background-color: #E0A96F;
+            background-color: $brand-gold;
             img {
                 display: block;
                 max-width: 70px;
@@ -75,6 +80,7 @@ export default {
                 a {
                     text-decoration: none;
                     color: #6A6A6A;
+                    font-size: 1.1rem;
                 }
             }
         }
@@ -86,19 +92,19 @@ export default {
         .icon {
             display: inline-block;
             vertical-align: middle;
-            max-width: 22px;
+            text-align: center;
+            cursor: pointer;
+            max-width: 24px;
             width: 100%;
-            margin: 0 .5rem;
-            &:last-child {
-                margin-right: 0;
-                margin-left: 0;
+            margin: 0 .75rem;
+            svg {
+                font-size: 24px;
+                color: $brand-gold;
             }
-            &:nth-child(2) {
-                max-width: 24px;
-            }
-            img {
-                display: block;
-                width: 100%;
+        }
+        .fb {
+            svg {
+                font-size: 22px;
             }
         }
     }

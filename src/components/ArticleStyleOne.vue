@@ -1,7 +1,7 @@
 <template>
     <div class="article">
         <div class="img-cover">
-            <img src="../assets/inter1.jpg" alt="">
+            <img src="../assets/images/interviews/i_06.jpg" alt="">
         </div>
         <div class="desc">
             <div class="date">
@@ -22,20 +22,24 @@ export default {
 
 <style lang="scss" scoped>
 .article {
-    // width: 380px;
+    max-width: 400px;
+    margin: auto;
     margin-top: 2.5rem;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     .img-cover {
         width: 100%;
         img {
+            height: 300px;
+            display: block;
+            object-fit: cover;
             width: 100%;
         }
     }
     .desc {
         display: flex;
+        padding-top: 1rem;
         .date {
-            padding: .5rem 1rem;
-            // text-align: right;
+            padding: 0 1rem 0 .5rem;
             .month {
                 font-size: 1rem;
                 font-weight: 500;
@@ -44,6 +48,7 @@ export default {
                 font-size: 1.2rem;
                 font-weight: 500;
                 color: #E0A96F;
+                line-height: 1.2;
             }
             .year {
                 font-size: .8rem;
@@ -51,9 +56,9 @@ export default {
             }
         }
         .title {
-            padding: .5rem 0 0 .5rem;
+            padding: 0 0 0 .5rem;
             text-align: left;
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #646464;
         }
     }
