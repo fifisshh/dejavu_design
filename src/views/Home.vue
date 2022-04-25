@@ -19,23 +19,8 @@
       <div class="detail-block">
         <b-container>
           <b-row>
-            <b-col cols="12" md="4">
-              <ArticleStyleOne/>
-            </b-col>
-            <b-col cols="12" md="4">
-              <ArticleStyleOne/>
-            </b-col>
-            <b-col cols="12" md="4">
-              <ArticleStyleOne/>
-            </b-col>
-            <b-col cols="12" md="4">
-              <ArticleStyleOne/>
-            </b-col>
-            <b-col cols="12" md="4">
-              <ArticleStyleOne/>
-            </b-col>
-            <b-col cols="12" md="4">
-              <ArticleStyleOne/>
+            <b-col cols="12" md="4" v-for="item in items" :key="item.id">
+              <ArticleStyleOne :item="item"/>
             </b-col>
           </b-row>
         </b-container>
@@ -45,6 +30,31 @@
       </div>
 
     </div>
+    <div class="section-inter">
+      <div class="title">
+        <h2>品牌</h2>
+        <span>the brand</span>
+        <a href="" class="link-sec">
+          <div class="icon">
+            <font-awesome-icon icon="fa-solid fa-arrow-right-long" />
+          </div>
+        </a>
+      </div>
+      <div class="detail-block detail-block-grab">
+        <div class="horizontal" v-for="item in items" :key="item.id">
+              <ArticleStyleOne :item="item"/>
+        </div>
+        <!-- <b-container>
+          <b-row>
+            <b-col cols="12" md="4" v-for="item in items" :key="item.id">
+              <ArticleStyleOne :item="item"/>
+            </b-col>
+          </b-row>
+        </b-container> -->
+      </div>
+
+    </div>
+    <Footer/>
   </div>
 </template>
 
@@ -53,14 +63,28 @@
 // import HelloWorld from '@/components/HelloWorld.vue'
 import Navigate from '@/components/Navigate.vue'
 import ArticleStyleOne from '@/components/ArticleStyleOne.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
     // HelloWorld,
     Navigate,
-    ArticleStyleOne
-  }
+    ArticleStyleOne,
+    Footer
+  },
+  data: function () {
+    return {
+      items: [
+        { id: "1", src: "i_01.jpg" },
+        { id: "2", src: "i_02.jpg" },
+        { id: "3", src: "i_03.jpg" },
+        { id: "4", src: "i_04.jpg" },
+        { id: "5", src: "i_05.jpg" },
+        { id: "6", src: "i_06.jpg" },
+      ],
+    };
+  },
 }
 </script>
 
@@ -126,6 +150,12 @@ export default {
     svg {
       font-size: 1.5rem;
     }
+  }
+}
+.detail-block-grab {
+  cursor: grab;
+  display: flex;
+  .horizontal {
   }
 }
 </style>

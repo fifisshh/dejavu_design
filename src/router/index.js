@@ -5,9 +5,19 @@ import Home from '../views/Home.vue'
 Vue.use(VueRouter)
 
 const routes = [{
-        path: '/',
+        path: '/home',
         name: 'Home',
-        component: Home
+        component: Home,
+        meta: {
+            progress: {
+                func: [
+                    { call: 'color', modifier: 'temp', argument: '#ffb000' },
+                    { call: 'fail', modifier: 'temp', argument: '#6e0000' },
+                    { call: 'location', modifier: 'temp', argument: 'top' },
+                    { call: 'transition', modifier: 'temp', argument: { speed: '1.5s', opacity: '0.6s', termination: 400 } }
+                ]
+            }
+        }
     },
     {
         path: '/about',
@@ -17,7 +27,12 @@ const routes = [{
         // which is lazy-loaded when the route is visited.
         component: () =>
             import ( /* webpackChunkName: "about" */ '../views/About.vue')
-    }
+    },
+    // {
+    //     path: '/news',
+    //     name: 'News',
+    //     component: '../views/News.vue',
+    // },
 ]
 
 const router = new VueRouter({

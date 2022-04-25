@@ -1,7 +1,7 @@
 <template>
     <div class="article">
         <div class="img-cover">
-            <img src="../assets/images/interviews/i_06.jpg" alt="">
+            <img :src="getImgUrl(item.src)" alt="item.src">
         </div>
         <div class="desc">
             <div class="date">
@@ -17,6 +17,12 @@
 <script>
 export default {
     name: 'ArticleStyleOne',
+    props: ['item'],
+    methods: {
+    getImgUrl: function (imagePath) {
+      return require('@/assets/images/interviews/' + imagePath);
+    }
+  }
 }
 </script>
 
