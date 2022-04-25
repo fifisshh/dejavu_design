@@ -155,7 +155,5 @@ export default {
 .detail-block-grab {
   cursor: grab;
   display: flex;
-  .horizontal {
-  }
 }
 </style>
