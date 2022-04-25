@@ -41,9 +41,9 @@
         </a>
       </div>
       <div class="detail-block detail-block-grab">
-        <!-- <div class="horizontal" v-for="item in items" :key="item.id"> -->
-              <!-- <ArticleStyleOne :item="item"/> -->
-        <!-- </div> -->
+        <div class="horizontal" v-for="item in items" :key="item.id">
+              <ArticleStyleOne :item="item"/>
+        </div>
         <!-- <b-container>
           <b-row>
             <b-col cols="12" md="4" v-for="item in items" :key="item.id">
