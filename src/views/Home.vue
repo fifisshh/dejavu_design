@@ -101,12 +101,12 @@ export default {
   data() {
     return {
       items: [
-        { id: "1", src: "i_01.jpg" },
-        { id: "2", src: "i_02.jpg" },
-        { id: "3", src: "i_03.jpg" },
-        { id: "4", src: "i_04.jpg" },
-        { id: "5", src: "i_05.jpg" },
-        { id: "6", src: "i_06.jpg" },
+        { id: "1", src: "img_01.jpg" },
+        { id: "2", src: "img_02.jpg" },
+        { id: "3", src: "img_03.jpg" },
+        { id: "4", src: "img_04.jpg" },
+        { id: "5", src: "img_05.jpg" },
+        { id: "6", src: "img_06.jpg" },
       ],
     };
   },
