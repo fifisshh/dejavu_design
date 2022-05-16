@@ -10,6 +10,7 @@
     background-color: $brand-gold;
     padding: .5rem 0;
     text-align: right;
+    margin-top: 2rem;
     span {
         display: inline-block;
         padding-right: 4rem;

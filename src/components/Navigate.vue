@@ -1,9 +1,13 @@
 <template>
     <div class="navbar">
+        <Menu :menuOpen="menuOpen"></Menu>
         <div class="logo-block">
             <div class="logo">
                 <img alt="DEJAVU logo" src="../assets/logo_w.png">
             </div>
+        </div>
+        <div class="rwd-nav" @click="menuOpen=!menuOpen">
+            <font-awesome-icon icon="fa-solid fa-bars" />
         </div>
         <div class="navbar-item">
             <ul>
@@ -34,8 +38,17 @@
 </template>
 
 <script>
+import Menu from '@/components/Menu.vue'
 export default {
     name: 'Navigate',
+    components: {
+        Menu,
+    },
+    data() {
+        return {
+            menuOpen: false,
+        }
+    }
 }
 </script>
 
@@ -49,6 +62,15 @@ export default {
     padding: 0 4rem;
     display: flex;
     height: 70px;
+    @media screen and (max-width: 767px) {
+        padding: 0;
+    }
+    .rwd-nav {
+        display: none;
+        @media screen and (max-width: 767px) {
+            display: block;
+        }
+    }
     .logo-block {
         flex: 1 0 12%;
         .logo {
@@ -70,6 +92,9 @@ export default {
     .navbar-item {
         flex: 1 0 38%;
         align-self: center;
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
         ul {
             list-style: none;
             display: flex;
@@ -109,4 +134,5 @@ export default {
         }
     }
 }
+
 </style>
