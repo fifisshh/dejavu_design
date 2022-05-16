@@ -1,6 +1,6 @@
 <template>
     <div class="navbar">
-        <Menu :menuOpen="menuOpen"></Menu>
+        <Menu :menuOpen="menuOpen" @close="closeMenu"></Menu>
         <div class="logo-block">
             <div class="logo">
                 <img alt="DEJAVU logo" src="../assets/logo_w.png">
@@ -48,6 +48,11 @@ export default {
         return {
             menuOpen: false,
         }
+    },
+    methods: {
+        closeMenu() {
+            this.menuOpen = false;
+        }
     }
 }
 </script>
@@ -61,6 +66,7 @@ export default {
     position: relative;
     padding: 0 4rem;
     display: flex;
+    justify-content: center;
     height: 70px;
     @media screen and (max-width: 767px) {
         padding: 0;
@@ -70,12 +76,15 @@ export default {
         @media screen and (max-width: 767px) {
             display: block;
         }
+        svg {
+            color: $brand-gold;
+            font-size: 22px;
+        }
     }
     .logo-block {
-        flex: 1 0 12%;
+        width: 120px;
         .logo {
             position: absolute;
-            // /* display: inline-block; */
             width: 90px;
             height: 100px;
             top: 0;
@@ -88,9 +97,20 @@ export default {
                 padding-top: 20px;
             }
         }
+        @media screen and (max-width: 767px) {
+            width: 100px;
+            .logo {
+                width: 80px;
+                height: 90px;
+                img {
+                    max-width: 60px;
+                    padding-top: 15px;
+                }
+            }
+        }
     }
     .navbar-item {
-        flex: 1 0 38%;
+        flex: 1 0 1;
         align-self: center;
         @media screen and (max-width: 767px) {
             display: none;
@@ -122,14 +142,26 @@ export default {
             max-width: 24px;
             width: 100%;
             margin: 0 .75rem;
+            @media screen and (max-width: 767px) {
+                margin: 0 .5rem;
+            }
             svg {
                 font-size: 24px;
                 color: $brand-gold;
+                @media screen and (max-width: 767px) {
+                    font-size: 20px;
+                }
             }
         }
         .fb {
+            @media screen and (max-width: 767px) {
+                margin-left: .2rem;
+            }
             svg {
                 font-size: 22px;
+                @media screen and (max-width: 767px) {
+                    font-size: 18px;
+                }
             }
         }
     }

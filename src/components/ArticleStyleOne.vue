@@ -28,17 +28,17 @@ export default {
 
 <style lang="scss" scoped>
 .article {
-    max-width: 400px;
+    width: 100%;
     margin: auto;
     margin-top: 2.5rem;
     margin-bottom: 20px;
     .img-cover {
         width: 100%;
         img {
-            height: 300px;
             display: block;
             object-fit: cover;
             width: 100%;
+            height: auto;
         }
     }
     .desc {
@@ -62,10 +62,15 @@ export default {
             }
         }
         .title {
-            padding: 0 0 0 .5rem;
+            padding: 0 3rem 0 .5rem;
             text-align: left;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #646464;
+            white-space: normal;
+            @media screen and (min-width: 531px) {
+                font-size: 1.1rem;
+                padding-right: 1.5rem;
+            }
         }
     }
 }
