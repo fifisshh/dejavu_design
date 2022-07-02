@@ -2,29 +2,26 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo_bwn.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Navigate/>
-    <div class="section-one">
-      
-    </div>
+    <div class="section-one"> </div>
 	<!-- 專訪區塊 -->
     <div class="section-inter">
-      <div class="title">
-        <h2>專訪</h2>
-        <span>the interview</span>
-        <a href="" class="link-sec">
-			<div class="icon">
-				<font-awesome-icon icon="fa-solid fa-arrow-right-long" />
-			</div>
-        </a>
-      </div>
+		<div class="title">
+			<h2>專訪</h2>
+			<span>the interview</span>
+			<a href="" class="link-sec">
+				<div class="icon">
+					<font-awesome-icon icon="fa-solid fa-arrow-right-long" />
+				</div>
+			</a>
+		</div>
       <div class="detail-block">
-        <b-container>
-          <b-row>
-            <b-col cols="12" xs="12" md="6" lg="4" v-for="item in items" :key="item.id">
-              <ArticleStyleOne :item="item"/>
-            </b-col>
-          </b-row>
-        </b-container>
+		<b-container>
+			<b-row>
+			<b-col cols="12" xs="12" md="6" lg="4" v-for="item in items" :key="item.id">
+				<ArticleStyleOne :item="item"/>
+			</b-col>
+			</b-row>
+		</b-container>
       </div>
 
     </div>
@@ -34,11 +31,11 @@
 		<div class="title">
 		<h2>品牌</h2>
 		<span>the brand</span>
-		<a href="" class="link-sec">
+		<router-link to="/brand" class="link-sec" key="key">
 			<div class="icon">
 				<font-awesome-icon icon="fa-solid fa-arrow-right-long" />
 			</div>
-		</a>
+		</router-link>
 		</div>
 		<div class="detail-block detail-block-grab" ref="list">
 			<div class="pattern"></div>
@@ -60,16 +57,13 @@
 		</div>
 
     </div>
-    <Footer/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
-import Navigate from '@/components/Navigate.vue'
 import ArticleStyleOne from '@/components/ArticleStyleOne.vue'
-import Footer from '@/components/Footer.vue'
 import { Swiper, SwiperSlide } from 'swiper-vue2'
 import 'swiper/swiper-bundle.css'
 
@@ -77,9 +71,7 @@ import 'swiper/swiper-bundle.css'
 export default {
   name: 'Home',
   components: {
-	Navigate,
 	ArticleStyleOne,
-	Footer,
 	Swiper,
 	SwiperSlide,
   },
@@ -119,8 +111,11 @@ export default {
     },
     onSlideChange () {
 		console.log('slide change')
-    }
+	},
   },
+//   created() {
+//     document.addEventListener("scroll", this.listenScroll);
+//   },
 }
 </script>
 
@@ -132,6 +127,7 @@ export default {
   width: 100%;
   height: calc( 100vh - 70px );
   background-color: #ddd;
+  margin-bottom: 5rem;
 }
 .title {
   margin-top: 2rem;

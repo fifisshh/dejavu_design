@@ -2,7 +2,7 @@
     <div class="navbar">
         <Menu :menuOpen="menuOpen" @close="closeMenu"></Menu>
         <div class="logo-block">
-            <div class="logo">
+            <div class="logo" :class="{scrollScale: scrollPosition > 100}">
                 <img alt="DEJAVU logo" src="../assets/logo_w.png">
             </div>
         </div>
@@ -47,19 +47,25 @@ export default {
     data() {
         return {
             menuOpen: false,
+            scrollPosition: null
         }
     },
     methods: {
         closeMenu() {
             this.menuOpen = false;
+        },
+        updateScroll() {
+            this.scrollPosition = window.scrollY
         }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.updateScroll);
     }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
-
 .navbar {
     // background: rgb(184, 171, 158);
     border-bottom: 1px solid #ddd;
@@ -84,11 +90,13 @@ export default {
     .logo-block {
         width: 120px;
         .logo {
-            position: absolute;
+            position: fixed;
+            z-index: 99;
             width: 90px;
             height: 100px;
             top: 0;
             background-color: $brand-gold;
+            transition: .15s ease-in;
             img {
                 display: block;
                 max-width: 70px;
@@ -107,6 +115,11 @@ export default {
                     padding-top: 15px;
                 }
             }
+        }
+        .scrollScale {
+            transform: scale(.6);
+            top: -20px;
+            transition: .15s ease-in;
         }
     }
     .navbar-item {
